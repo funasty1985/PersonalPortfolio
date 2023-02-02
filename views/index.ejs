@@ -1,0 +1,38 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+
+    <!--Main Content-->
+    <main class="container">
+      <div class="container-fluid py-5">
+        <!-- <h1 class="display-5 fw-bold mb-5">Welcome to the <%= title %> page</h1> -->
+
+        <!-- generate content based on title arguement -->
+        <% if(title == "Home Page") {%> 
+          <%- include partials/home%>
+        <% } %>
+
+        <% if(title == "Services") {%> 
+        <h1 class="display-5 fw-bold mb-5"><%= title %></h1>
+        <%- include partials/services%>
+        <% } %>
+
+        <% if(title == "Projects") {%> 
+        <h1 class="display-5 fw-bold mb-5"> <%= title %> </h1>
+        <%- include partials/projects%>
+        <% } %>
+        
+        <% if(title == "About Me") {%> 
+        <h1 class="display-5 fw-bold mb-5"> <%= title %> </h1>
+        <%- include partials/about%>
+        <% } %> 
+        
+        <% if(title == "Contact Page") {%> 
+        <%- include partials/contact%>
+        <% } %> 
+
+      </div>
+    </main>
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
+

@@ -1,0 +1,41 @@
+/* client side views css */
+.m{
+  background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/myBack.jpg');
+  width:100%;
+  background-position: center;
+  color:white;
+  line-height: 1.6;
+  grid-area:sky;
+  -ms-grid-row:1; 
+  -ms-grid-column:1; 
+}
+.m div{
+    display: flex;
+    height: 650px;
+    flex-flow: column; 
+    justify-content: center;
+    text-align: center;
+}
+.m h1{
+  position:relative;
+}
+.m span{
+  position:relative;
+  right:0.2%;
+  padding:12px;
+  font-size:22px;
+  border: 2px solid white;
+}
+
+
+ul.custom-list li::marker {
+    height: 4px;
+    width: 4px;
+    color: #156ba3;
+    top: 8px;
+}
+
+ul.custom-list{
+    margin-top: 13px;
+    margin-left: 6px;
+}
