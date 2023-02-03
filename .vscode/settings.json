@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/4c2eb6bd-8b91-4f34-af9a-671d739f6f8f/azurecosmosdb/subscriptions/4c2eb6bd-8b91-4f34-af9a-671d739f6f8f/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/liangfuskiportfolio",
+    "appService.deploySubpath": "."
+}

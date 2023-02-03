@@ -1,4 +1,10 @@
-/* client side views css */
+/* 
+File Name: style.css.js
+Developer Name: Fu Liang
+Student ID: 301323706
+Date : 3 Feb, 2023
+File Function: defining client side views css
+*/
 .m{
   background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/myBack.jpg');
   width:100%;

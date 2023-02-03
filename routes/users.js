@@ -1,3 +1,11 @@
+/*
+File Name: user.js
+Developer Name: Fu Liang
+Student ID: 301323706
+Date : 3 Feb, 2023
+File Function: handling routes under the userRouter
+*/
+
 var express = require('express');
 var router = express.Router();
 

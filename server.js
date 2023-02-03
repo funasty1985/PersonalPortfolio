@@ -1,5 +1,13 @@
 #!/usr/bin/env node
 
+/*
+File Name: server.js
+Developer Name: Fu Liang
+Student ID: 301323706
+Date : 3 Feb, 2023
+File Function: starting the web app server and handle the general errors
+*/
+
 /**
  * Module dependencies.
  */
