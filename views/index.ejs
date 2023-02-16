@@ -16,26 +16,26 @@
 
         <!-- generate content based on title arguement -->
         <% if(title == "Home Page") {%> 
-          <%- include partials/home%>
+          <%- include home%>
         <% } %>
 
         <% if(title == "Services") {%> 
         <h1 class="display-5 fw-bold mb-5"><%= title %></h1>
-        <%- include partials/services%>
+        <%- include services%>
         <% } %>
 
         <% if(title == "Projects") {%> 
         <h1 class="display-5 fw-bold mb-5"> <%= title %> </h1>
-        <%- include partials/projects%>
+        <%- include projects%>
         <% } %>
         
         <% if(title == "About Me") {%> 
         <h1 class="display-5 fw-bold mb-5"> <%= title %> </h1>
-        <%- include partials/about%>
+        <%- include about%>
         <% } %> 
         
         <% if(title == "Contact Page") {%> 
-        <%- include partials/contact%>
+        <%- include contact%>
         <% } %> 
 
       </div>
