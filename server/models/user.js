@@ -7,6 +7,7 @@ File Function: defining the user model
 */
 
 let mongoose = require('mongoose');
+let passportLocalMongoose = require('passport-local-mongoose');
 
 // create a user model class
 let User = mongoose.Schema
@@ -49,4 +50,9 @@ let User = mongoose.Schema
     }
 )
 
-modules.export.User = mongoose.model('User', User);
+// configure options for User Model
+let options = ({missingPasswordError: "Wrong/ Missing Password"});
+
+User.plugin(passportLocalMongoose, options);
+
+module.exports.User = mongoose.model('User', User);

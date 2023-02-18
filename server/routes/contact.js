@@ -10,16 +10,26 @@ let express = require("express");
 let router = express.Router();
 let contactController = require('../controllers/contact');
 
-router.get('/', contactController.displayContactList);
+// middleware helper function for guard purpose
+function requireAuth(req, res, next)
+{
+    // check if the user is logged in
+    if (!req.isAuthenticated()){
+        return res.redirect('/login');
+    } 
+    next();
+}
 
-router.get('/add', contactController.displayContactAddPage);
+router.get('/', requireAuth, contactController.displayContactList);
 
-router.post('/add', contactController.processAddContact);
+router.get('/add', requireAuth, contactController.displayContactAddPage);
 
-router.get('/edit/:id', contactController.displayEditContactPage);
+router.post('/add', requireAuth, contactController.processAddContact);
 
-router.post('/edit/:id', contactController.processEditContact);
+router.get('/edit/:id', requireAuth, contactController.displayEditContactPage);
 
-router.get('/delete/:id', contactController.processDeleteContact)
+router.post('/edit/:id', requireAuth, contactController.processEditContact);
+
+router.get('/delete/:id', requireAuth, contactController.processDeleteContact)
 
 module.exports = router;

@@ -40,6 +40,26 @@
         <li class="nav-item">
           <a class="nav-link <%= (title == 'Contact Page') ? 'active' : '' %> " href="/contact"><i class="fa-regular fa-lg fa-address-book"></i> Contact</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link <%= (title == 'Business Contacts') ? 'active' : '' %> " href="/businessContact"><i class="fa-solid fa-lg fa-phone-volume"></i> Business Contact</a>
+        </li>
+
+        <% if(typeof displayName == "string" && displayName) { %>
+        <li class="navbar-text" style="color: chartreuse;">
+          <i class="fas fa-lg fa-user">
+          </i>
+            Welcome, <%= displayName %>
+        </li>
+        <li class="nav-item">
+          <a href="/logout" class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i>
+              Logout
+          </a>
+        </li>
+        <% } else {%>
+          <li class="nav-item"><a href="/login" class="nav-link"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a></li>
+        <% } %>
     </div>
   </div>
 </nav>   

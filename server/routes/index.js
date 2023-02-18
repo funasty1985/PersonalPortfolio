@@ -30,4 +30,19 @@ router.get('/services', indexController.displayServicePage);
 /* GET contact page. */
 router.get('/contact', indexController.displayContactPage);
 
+/* Get for displaying the login Page */
+router.get('/login', indexController.displayLoginPage);
+
+/* POST Route for processing the Register */
+router.post('/login', indexController.processLoginPage);
+
+/* Get for displaying user registration Page */
+router.get('/register', indexController.displayRegisterPage)
+
+/* POST for processing user registration */
+router.post('/register', indexController.processRegisterPage)
+
+/* Get to perform User Logout */
+router.get('/logout', indexController.performLogout);
+
 module.exports = router;

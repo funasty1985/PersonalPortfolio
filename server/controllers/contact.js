@@ -10,26 +10,26 @@ let express = require('express');
 let Contact =require('../models/contact');
 
 module.exports.displayContactList = (req, res, next) => {
-    Contact.find((err, contactList) => {
+    console.log("req user:::", req.user ? req.user.displayName: "")
+    Contact.find({}).sort({contactName: 1}).exec((err, contactList) => {
         if (err) {
             return console.error(err);
         } else {
             // sort the contact list in alphabetical order
-            contactList.sort();
-            res.render('index', {title: 'Business Contacts', contactList})
+            res.render('index', {title: 'Business Contacts', contactList, displayName: req.user ? req.user.displayName: ""})
         }
     })
 }
 
 module.exports.displayContactAddPage = (req, res, next) => {
-    res.render('index', {title: 'Add Business Contact'})
+    res.render('index', {title: 'Add Business Contact', displayName: req.user ? req.user.displayName: ""})
 }
 
 module.exports.processAddContact = (req, res, next) => {
     let newContact = Contact({
         "contactName": req.body.name,
         "contactNumber": req.body.number,
-        "email": req.body.email  
+        "email": req.body.email,
     })
 
     Contact.create(newContact, (err, contact) => {
@@ -49,7 +49,7 @@ module.exports.displayEditContactPage = (req, res, next) => {
             console.log(err);
         }
         else {
-            res.render('index', {title: "Edit Business Contact", contact})
+            res.render('index', {title: "Edit Business Contact", contact, displayName: req.user ? req.user.displayName: ""})
         }
     });
 }

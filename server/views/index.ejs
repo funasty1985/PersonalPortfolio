@@ -2,7 +2,7 @@
   File Name: index.ejs
   Developer Name: Fu Liang
   Student ID: 301323706
-  Date : 3 Feb, 2023
+  Date : 17 Feb, 2023
   File Function: the scaffold of all web pages view
 -->
 
@@ -50,6 +50,13 @@
         <%- include businessContact/edit%>
         <% } %>
 
+        <% if(title == "Login") {%>
+        <%- include auth/login%>
+        <% } %>
+
+        <% if(title == "Register") {%>
+        <%- include auth/register%>
+        <% } %>
       </div>
     </main>
 
