@@ -12,7 +12,7 @@ File Function: starting the web app server and handle the general errors
  * Module dependencies.
  */
 
-var app = require('./app');
+var app = require('./server/config/app');
 var debug = require('debug')('assignment1:server');
 var http = require('http');
 

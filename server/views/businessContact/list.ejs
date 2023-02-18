@@ -1,0 +1,51 @@
+<!--
+  File Name: businessContact.ejs
+  Developer Name: Fu Liang
+  Student ID: 301323706
+  Date : 17 Feb, 2023
+  File Function: the ejs for the bussiness Contact View
+-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-8">
+            <h1><%=title%></h1>
+            <a href="/businessContact/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus circle"></i>
+                Add a Contact
+            </a>
+            <br>
+            <table class="table table-bordered table-striped table-hover mt-3">
+                <!-- Header Row -->
+                <tr class="d-flew">
+                    <th class="text-center align-middle col-2">Name</th>
+                    <th class="text-center col-2">Number</th>
+                    <th class="text-center col-2">Email</th>
+                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th>
+                </tr>
+
+                <!-- display contact -->
+                <% for(contact of contactList){ %>
+                    <tr class="d-flew">
+                        <td class="text-center col-2 align-middle"><%= contact.contactName%></td>
+                        <td class="text-center col-2 align-middle"><%= contact.contactNumber %></td>
+                        <td class="text-center col-2 align-middle"><%= contact.email %></td>
+                        <td class="text-center col-1">
+                            <a href="/businessContact/edit/<%= contact._id%>" class="btn btn-primary btn-small">
+                                <i class="fas fa-pencil-alt"></i>
+                                Edit
+                            </a>
+                        </td>
+                        <td class="text-center col-1">
+                            <a href="/businessContact/delete/<%= contact._id%>" class="btn btn-primary btn-small">
+                                <i class="fas fa-pencil-alt"></i>
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>

@@ -38,6 +38,18 @@
         <%- include contact%>
         <% } %> 
 
+        <% if(title == "Business Contacts") {%> 
+        <%- include businessContact/list%>
+        <% } %> 
+
+        <% if(title == "Add Business Contact") {%>
+        <%- include businessContact/add%>
+        <% } %>
+
+        <% if(title == "Edit Business Contact") {%>
+        <%- include businessContact/edit%>
+        <% } %>
+
       </div>
     </main>
 
